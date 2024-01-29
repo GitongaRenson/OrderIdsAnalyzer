@@ -12,7 +12,7 @@ namespace OrderIdsAnalyzer
             fraudulentOrdersIds[1] = "B456";
             fraudulentOrdersIds[2] = "C789";
             //fraudulentOrdersIds[3] = "D101";
-            */
+            
 
             string[] fraudulentOrdersIds = { "A123", "B456", "C789" };
             //Accessing the values in the array.
@@ -26,14 +26,26 @@ namespace OrderIdsAnalyzer
 
             Console.WriteLine($"There are {fraudulentOrdersIds.Length} fraudulent orders to be processes");
             Console.WriteLine($"Reassign First: {fraudulentOrdersIds[0]}");
-
+            */
 
             string[] names = { "Rowena", "Robin", "Bao" };
+           
 
             foreach (string name in names)
             {
                 Console.WriteLine(name);
             }
+
+            int bin = 0;
+            int[] inventory = { 200, 450, 700, 175, 250 };
+            int sum = 0;
+            foreach (int items in inventory)
+            {
+                sum += items;
+                bin++;
+                Console.WriteLine($"Bin {bin} = {items} items (Running total: {sum})");
+            }
+            Console.WriteLine($"\nWe have {sum} items in the inventory\n");
         }
     }
 }
