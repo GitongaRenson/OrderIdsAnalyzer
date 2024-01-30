@@ -6,28 +6,38 @@ namespace OrderIdsAnalyzer
     {
         static void Main(string[] args)
         {
-            /*
-            string[] fraudulentOrdersIds = new string[3];
-            fraudulentOrdersIds[0] = "A123";
-            fraudulentOrdersIds[1] = "B456";
-            fraudulentOrdersIds[2] = "C789";
-            //fraudulentOrdersIds[3] = "D101";
             
+             //The following code creates five random OrderIDs to test the fraud detection process.
+            //OrderIds consist of a letter from A to E and a three digit number, Ex A123.
+           
+            Random random = new Random();
+            string[] orderIDs = new string[5];
+            for (int i = 0; i < orderIDs.Length; i++)
+            {
+                int prefixValue = random.Next(65, 70);
+                string prefix = Convert.ToChar(prefixValue).ToString();
+                string suffix = random.Next(1, 1000).ToString("000");
+                orderIDs[i] = prefix + suffix;
+            }
+            foreach(var orderID in orderIDs)
+            {
+                Console.WriteLine(orderID);
+            }
 
-            string[] fraudulentOrdersIds = { "A123", "B456", "C789" };
+          
+            string[] fraudulentOrdersIds = { "B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179" };
             //Accessing the values in the array.
+            foreach (string order in fraudulentOrdersIds)
+            {
+                if (order.StartsWith("B"))
+                {
+                    Console.WriteLine($"{order}");
+                }
+            }
 
-            Console.WriteLine($"First: {fraudulentOrdersIds[0]}");
-            Console.WriteLine($"Second: {fraudulentOrdersIds[1]}");
-            Console.WriteLine($"Third: {fraudulentOrdersIds[2]}");
-
-            //Reassigning a value to an index of the array
-            fraudulentOrdersIds[0] = "F000";
-
-            Console.WriteLine($"There are {fraudulentOrdersIds.Length} fraudulent orders to be processes");
-            Console.WriteLine($"Reassign First: {fraudulentOrdersIds[0]}");
-            */
-
+            Console.WriteLine($"\nThere are {fraudulentOrdersIds.Length} fraudulent orders to be processes\n");
+            
+            
             string[] names = { "Rowena", "Robin", "Bao" };
            
 
@@ -46,6 +56,24 @@ namespace OrderIdsAnalyzer
                 Console.WriteLine($"Bin {bin} = {items} items (Running total: {sum})");
             }
             Console.WriteLine($"\nWe have {sum} items in the inventory\n");
+       
+            //This code reverses a message, counts the number of times a particular character appears, then prints the results to the console window.
+            string originalMessage = "The quick brown fox jumps over the lazy dog.";
+            char[] message = originalMessage.ToCharArray();
+            //Array.Reverse(message);
+
+            int letterCount = 0;
+
+            foreach (char letter in message)
+            {
+             if (letter == 'o')
+                {
+                    letterCount++;
+                }
+            }
+            //string newMessage = new string(message);
+            Console.WriteLine(message);
+            Console.WriteLine($"'o' appears {letterCount} times.");
         }
     }
 }
