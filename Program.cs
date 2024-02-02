@@ -123,7 +123,7 @@ namespace OrderIdsAnalyzer
                     break;
             }
             Console.WriteLine($"{employeeName}, {title}");
-            */
+            
             // SKU = Stock Keeping Unit.
             // SKU value format: <product #>-<2-letter color code>-<size code>
             string sku = "01-MN-L";
@@ -175,6 +175,25 @@ namespace OrderIdsAnalyzer
                     break;
             }
             Console.WriteLine($"Product: {size} {color} {type}");
+            */
+            for (int i = 1; i < 101; i++)
+            {
+                int remainderOf3 = i % 3;
+                int remainderOf5 = i % 5;
+
+                if (remainderOf3 == 0 && remainderOf5 == 0)
+                    Console.WriteLine($"{i} - FizzBuzz");
+                
+
+                else if (remainderOf5 == 0)
+                    Console.WriteLine($"{i} - Buzz");
+
+                else if (remainderOf3 == 0)
+                    Console.WriteLine($"{i} - Fizz");
+
+                else
+                    Console.WriteLine(i);
+            }
 
         }
     }
